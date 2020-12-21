@@ -1,13 +1,3 @@
-/* Палитра цветов 
-#757575 основной цвет текста
-#212121 второй цвет текста
-#FFFFFF третий цвет текста, третий цвет фона
-#000000 лого
-#2196F3 акцент
-rgba(255, 255, 255, 0.6) контакты футер
-#F5F4FA основной цвет фона
-#2F303A второй цвет фона
-*/
 :root {
   --primary-text-color: #757575;
   --secondary-text-color: #212121;
@@ -18,6 +8,8 @@ rgba(255, 255, 255, 0.6) контакты футер
   --primary-background-color: #ffffff;
   --secondary-background-color: #2f303a;
   --tertiary-background-color: #f5f4fa;
+  --border-bottom-color: #ececec;
+  --border-projects-list-color: #eeeeee;
 }
 body {
   color: var(--primary-text-color);
@@ -43,6 +35,17 @@ body {
   padding-left: 15px;
   padding-right: 15px;
 }
+.hidden {
+  display: none;
+}
+.main-nav {
+  display: flex;
+  align-items: center;
+}
+.nav-logo {
+  padding-top: 24px;
+  padding-bottom: 24px;
+}
 .logo,
 .logo-footer {
   margin-top: 0;
@@ -58,11 +61,20 @@ body {
   color: var(--accent-color);
 }
 .site-nav {
+  display: flex;
   margin-top: 0;
   margin-bottom: 0;
+  margin-left: 93px;
   padding-left: 0;
 }
+.site-nav .item:not(:last-child) {
+  margin-right: 50px;
+}
 .site-nav .link {
+  display: block;
+  padding-top: 32px;
+  padding-bottom: 32px;
+
   color: var(--secondary-text-color);
   font-weight: 500;
   font-size: 14px;
@@ -78,13 +90,23 @@ body {
 }
 .address {
   font-style: normal;
+  margin-left: auto;
 }
 .site-contacts {
+  display: flex;
   margin-top: 0;
   margin-bottom: 0;
+
   padding-left: 0;
 }
+.site-contacts .item:not(:last-child) {
+  margin-right: 50px;
+}
 .site-contacts .contacts {
+  display: block;
+  padding-top: 32px;
+  padding-bottom: 32px;
+
   color: var(--primary-text-color);
   font-weight: 500;
   font-size: 14px;
@@ -132,10 +154,15 @@ body {
   letter-spacing: 0.06em;
 }
 .features-list {
+  display: flex;
+  justify-content: space-between;
   margin-top: 0;
   margin-bottom: 0;
   padding-top: 94px;
   padding-left: 0;
+}
+.features-list .item {
+  width: 270px;
 }
 .features-title {
   margin-top: 0;
@@ -155,6 +182,8 @@ body {
 }
 .worklist,
 .teamlist {
+  display: flex;
+  justify-content: space-between;
   margin-top: 0;
   margin-bottom: 0;
   padding-bottom: 94px;
@@ -177,8 +206,8 @@ body {
   border-radius: 0px 0px 4px 4px;
 
   background-color: var(--primary-background-color);
-  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
-    0px 2px 1px rgba(0, 0, 0, 0.2);
+  /* box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
+    0px 2px 1px rgba(0, 0, 0, 0.2); */
 }
 .teamlist img {
   margin-bottom: 30px;
@@ -234,17 +263,20 @@ footer {
 
 /* portfolio.html */
 .border-bottom {
-  border-bottom: 1px solid #ececec;
+  border-bottom: 1px solid var(--border-bottom-color);
 }
 .filter {
+  display: flex;
+  justify-content: center;
   margin-top: 0;
   margin-bottom: 50px;
   padding-top: 94px;
   padding-left: 0;
 }
 .filter-button {
-  padding-top: 10px;
-  padding-bottom: 10px;
+  margin-right: 8px;
+  padding-top: 6px;
+  padding-bottom: 6px;
   padding-left: 22px;
   padding-right: 22px;
   border-radius: 4px;
@@ -258,6 +290,8 @@ footer {
   font-size: 16px;
   line-height: 1.63;
   text-align: center;
+
+  cursor: pointer;
 }
 .filter-button:hover,
 .filter-button:focus {
@@ -265,19 +299,30 @@ footer {
 
   background-color: var(--accent-color);
   color: var(--tertiary-text-color);
-  box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 1px 2px rgba(0, 0, 0, 0.08),
-    0px 2px 2px rgba(0, 0, 0, 0.12);
+  /* box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 1px 2px rgba(0, 0, 0, 0.08),
+    0px 2px 2px rgba(0, 0, 0, 0.12); */
 }
 .projects-list {
+  display: flex;
+  flex-wrap: wrap;
+
   margin-top: 0;
   margin-bottom: 0;
   padding-bottom: 94px;
   padding-left: 0;
 }
-.projects-list li {
-  border: 1px solid #eeeeee;
+.projects-list .item {
+  width: 370px;
+
+  border: 1px solid var(--border-projects-list-color);
 }
-.projects-list img {
+.projects-list .item:not(:nth-child(3n)) {
+  margin-right: 30px;
+}
+.projects-list .item:not(:nth-last-child(-n + 3)) {
+  margin-bottom: 30px;
+}
+.projects-list .item-img {
   margin-bottom: 30px;
 }
 .projects-list .title {

@@ -36,11 +36,18 @@ body {
   padding-right: 15px;
 }
 .hidden {
-  display: none;
+  position: absolute;
+  clip: rect(0 0 0 0);
+  width: 1px;
+  height: 1px;
+  margin: -1px;
 }
 .main-nav {
   display: flex;
   align-items: center;
+}
+nav {
+  display: flex;
 }
 .nav-logo {
   padding-top: 24px;
@@ -120,6 +127,8 @@ body {
   color: var(--accent-color);
 }
 .hero {
+  padding-top: 200px;
+  padding-bottom: 200px;
   text-align: center;
 
   background-color: var(--secondary-background-color);
@@ -153,12 +162,15 @@ body {
   text-align: center;
   letter-spacing: 0.06em;
 }
+.features {
+  padding-top: 94px;
+  padding-bottom: 94px;
+}
 .features-list {
   display: flex;
   justify-content: space-between;
   margin-top: 0;
   margin-bottom: 0;
-  padding-top: 94px;
   padding-left: 0;
 }
 .features-list .item {
@@ -177,7 +189,13 @@ body {
   margin-top: 0;
   margin-bottom: 0;
 }
+.work {
+  padding-bottom: 94px;
+}
 .team {
+  padding-top: 94px;
+  padding-bottom: 94px;
+
   background-color: var(--tertiary-background-color);
 }
 .worklist,
@@ -186,14 +204,18 @@ body {
   justify-content: space-between;
   margin-top: 0;
   margin-bottom: 0;
-  padding-bottom: 94px;
   padding-left: 0;
+}
+.worklist img,
+.teamlist img {
+  display: block;
+  /* max-width: 100%;
+  height: auto; */
 }
 .work-title,
 .team-title {
   margin-top: 0;
   margin-bottom: 50px;
-  padding-top: 94px;
 
   color: var(--secondary-text-color);
   font-weight: 700;
@@ -209,12 +231,14 @@ body {
   /* box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
     0px 2px 1px rgba(0, 0, 0, 0.2); */
 }
-.teamlist img {
-  margin-bottom: 30px;
+.teamlist .description {
+  padding-top: 30px;
+  padding-bottom: 30px;
 }
-.member {
+.teamlist .member {
   margin-top: 0;
-  margin-bottom: 10px;
+  margin-bottom: 0;
+  padding-bottom: 10px;
 
   color: var(--secondary-text-color);
   font-weight: 500;
@@ -225,18 +249,19 @@ body {
 .position {
   margin-top: 0;
   margin-bottom: 0;
-  padding-bottom: 30px;
 
   font-size: 16px;
   line-height: 1.19;
   text-align: center;
 }
 footer {
+  padding-top: 60px;
+  padding-bottom: 60px;
+
   background-color: var(--secondary-background-color);
 }
 .logo-footer {
   margin-bottom: 20px;
-  padding-top: 60px;
 
   color: var(--tertiary-text-color);
 }
@@ -244,7 +269,6 @@ footer {
   margin-top: 0;
   margin-bottom: 0;
   padding-left: 0;
-  padding-bottom: 60px;
 }
 .address-footerlist li:not(:last-child) {
   margin-bottom: 9px;
@@ -265,12 +289,15 @@ footer {
 .border-bottom {
   border-bottom: 1px solid var(--border-bottom-color);
 }
+.projects {
+  padding-top: 94px;
+  padding-bottom: 94px;
+}
 .filter {
   display: flex;
   justify-content: center;
   margin-top: 0;
   margin-bottom: 50px;
-  padding-top: 94px;
   padding-left: 0;
 }
 .filter-button {
@@ -308,7 +335,6 @@ footer {
 
   margin-top: 0;
   margin-bottom: 0;
-  padding-bottom: 94px;
   padding-left: 0;
 }
 .projects-list .item {
@@ -322,13 +348,18 @@ footer {
 .projects-list .item:not(:nth-last-child(-n + 3)) {
   margin-bottom: 30px;
 }
-.projects-list .item-img {
-  margin-bottom: 30px;
+.item-img {
+  display: block;
+}
+.projects-list .description {
+  padding-top: 20px;
+  padding-bottom: 20px;
+  padding-left: 24px;
 }
 .projects-list .title {
   margin-top: 0;
-  margin-bottom: 20px;
-  padding-left: 24px;
+  margin-bottom: 0;
+  padding-bottom: 4px;
 
   color: var(--secondary-text-color);
   font-size: 18px;
@@ -337,8 +368,7 @@ footer {
 }
 .projects-list .text {
   margin-top: 0;
-  margin-bottom: 30px;
-  padding-left: 24px;
+  margin-bottom: 0;
 
   color: var(--primary-text-color);
   font-size: 16px;
